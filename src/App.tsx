@@ -1,26 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import {
+	BrowserRouter,
+	Routes,
+	Route,
+	useNavigate
+} from "react-router-dom";
+import FinancialApp from './FinancialApp';
+import { } from "react-router-dom";
+import ReconciliationApp from './ReconciliationApp';
+import Overview from './pages/Overview';
+import Customers from './pages/Customers';
+import Defaulters from './pages/Defaulters';
+import Fulfilment from './pages/Fulfilment';
+import OverviewReconciliation from './pages/OverviewReconciliation';
+import Main from './components/Main';
+import CustomerProfile from './pages/CustomerProfile';
+import FulfilmentProfile from './pages/FulfilmentProfile';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+	return (
+		<BrowserRouter>
+			<Routes>
+				<Route path="/" element={<Main />} />
+				<Route path="/financial" element={<FinancialApp />}>
+					<Route index element={<Overview />} />
+					<Route path="customers" element={<Customers />} />
+					<Route path="defaults" element={<Defaulters />} />
+					<Route path="fulfilment" element={<Fulfilment />} />
+					<Route path="customer-profile" element={<CustomerProfile />} />
+                    <Route path="fulfilment-profile" element={<FulfilmentProfile />} />
+				</Route>
+				<Route path="/reconciliation" element={<ReconciliationApp />}>
+					<Route index element={<OverviewReconciliation />} />
+				</Route>
+			</Routes>
+		</BrowserRouter>
+	)
+
 }
 
-export default App;
+
+
+export default App
