@@ -53,11 +53,6 @@ const SideHeader = ({ }: SideHeaderProps) => {
                     {MenuItem({ icon: '/fulfilment-logo.svg', text: 'Fulfilment', onClick: () => onFulfilmentClickHandler(), active: location.pathname.indexOf("/fulfilment") != -1 })}
                     {MenuItem({ icon: '/overview-logo.svg', text: 'Reconciliation', onClick: () => onReconciliationClickHandler(), active: location.pathname.indexOf("/reconciliation") != -1 })}
                 </div>
-
-                {/* <div className='flex flex-col space-y-5 py-5'>
-                    <button className='border text-center rounded-full bg-gray-700 text-white py-2'>Reconciliation Dashboard</button>
-                    <button className='border text-center rounded-full py-2 text-xs' onClick={() => onNavigateClickHandler()}>Navigate to Financial</button>
-                </div> */}
             </div>
             <div className="absolute transition-all duration-1000 md:hidden flex items-center h-24 bg-white">
                 <button className="outline-none mobile-menu-button" onClick={() => setShowMenu(true)}>
@@ -85,16 +80,13 @@ const SideHeader = ({ }: SideHeaderProps) => {
                         quick menu
                     </div>
                     <div className='space-y-5'>
-                        {MenuItem({ icon: '/overview-logo.svg', text: 'Overview', onClick: () => onOverviewClickHandler(), active: location.pathname == "/financial" })}
+                        {MenuItem({ icon: '/overview-logo.svg', text: 'Overview', onClick: () => onOverviewClickHandler(), active: location.pathname.indexOf("/") != -1 })}
                         {MenuItem({ icon: '/customers-logo.svg', text: 'Customers', onClick: () => onCustomerClickHandler(), active: location.pathname.indexOf("/customers") != -1 })}
                         {MenuItem({ icon: '/defaults-logo.svg', text: 'Defaults', onClick: () => onDefaultsClickHandler(), active: location.pathname.indexOf("/defaults") != -1 })}
                         {MenuItem({ icon: '/fulfilment-logo.svg', text: 'Fulfilment', onClick: () => onFulfilmentClickHandler(), active: location.pathname.indexOf("/fulfilment") != -1 })}
+                        {MenuItem({ icon: '/overview-logo.svg', text: 'Reconciliation', onClick: () => onReconciliationClickHandler(), active: location.pathname.indexOf("/reconciliation") != -1 })}
                     </div>
 
-                    <div className='flex flex-col space-y-5 py-5'>
-                        <button className='border text-center rounded-full bg-gray-700 text-white py-2'>Reconciliation Dashboard</button>
-                        <button className='border text-center rounded-full py-2 text-xs' onClick={() => onNavigateClickHandler()}>Navigate to Financial</button>
-                    </div>
                 </div>
             </MenuModal>
         </>
