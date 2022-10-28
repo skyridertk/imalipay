@@ -10,7 +10,7 @@ const Image = (props: ImageProp) => {
 }
 
 Image.defaultProps = {
-  className: "w-full h-full"
+  className: "git "
 }
 
 export default Image

@@ -204,7 +204,7 @@ const OverviewReconciliation = () => {
 function AccountButton({ icon, label, color, onClick }) {
     return (
         <button className={`${color} flex px-3 py-2 rounded-lg items-center`} onClick={onClick}>
-            <Image image={icon} />
+            <Image image={icon} className="w-10 h-10"/>
             <div>{label}</div>
         </button>
     )
