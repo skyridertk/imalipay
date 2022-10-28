@@ -205,7 +205,7 @@ const Fulfilment = () => {
                 </div>
                 
 
-                {TableComponent(rowSelection, filteredData, columns, (record, index)=>navigate("/financial/fulfilment-profile"))}
+                {TableComponent(rowSelection, filteredData, columns, true,(record, index)=>navigate("/financial/fulfilment-profile"))}
 
 
             </div>
