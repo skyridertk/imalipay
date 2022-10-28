@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import Image from '../components/Image'
+import Image from './Image'
 import { useNavigate, useLocation } from "react-router-dom";
-import { MenuModal } from './MenuModal';
-import { SideHeaderReconciliationProp } from '../components/SideHeaderReconciliationProp';
+import { MenuModal } from '../models/MenuModal';
+import { SideHeaderReconciliationProp } from '../models/SideHeaderReconciliationProp';
 
 const SideHeaderReconciliation = ({}: SideHeaderReconciliationProp) => {
     let navigate = useNavigate()
@@ -38,7 +38,7 @@ const SideHeaderReconciliation = ({}: SideHeaderReconciliationProp) => {
                     <button className='border text-center rounded-full py-2 text-xs' onClick={() => onNavigateClickHandler()}>Navigate to Reconciliation</button>
                 </div>
             </div>
-            <div className="md:hidden flex items-center h-24">
+            <div className="absolute md:hidden bg-white flex items-center h-24">
                 <button className="outline-none mobile-menu-button" onClick={() => setShowMenu(true)}>
                     <svg
                         className="w-6 h-6 text-gray-500"

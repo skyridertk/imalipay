@@ -1,4 +1,3 @@
-import { Table } from 'antd'
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import Image from '../components/Image'
@@ -6,10 +5,13 @@ import useExport from '../hooks/useExport';
 import { OverviewItem } from '../components/OverviewItem';
 import { CustomerDetail } from '../components/CustomerDetail';
 import { Customer } from '../models/Customer';
+import { Container } from '../components/Container';
+import { TableComponent } from '../components/TableComponent';
+import { SearchComponent } from '../components/SearchComponent';
 
 
 
-interface RootObject {
+export interface RootObject {
     id: number;
     customer: Customer;
     deposit: string;
@@ -124,7 +126,7 @@ const Overview = () => {
     };
 
     return (
-        <div className='bg-gray-50 w-full min-h-screen p-10 space-y-4'>
+        <Container>
             <div className='text-2xl font-medium'>Overview</div>
 
             <div className='flex flex-col md:flex-row flex-wrap'>
@@ -137,28 +139,16 @@ const Overview = () => {
 
             <div className='py-20'>
                 <div className='flex items-center justify-between'>
-                    <div className='flex relative'>
-                        <input type={'text'} placeholder={"Search for customer's name"} className="bg-white outline outline-gray-500 rounded-lg pl-10 px-8 py-2 w-96" onChange={(e) => handleSearch(e.target.value)} />
-                        <div className='absolute left-2 top-2'>
-                            <Image image={"/search.svg"} />
-                        </div>
-                    </div>
+                    {SearchComponent("Search for customer's name", handleSearch)}
 
                     <button className='bg-white py-2 px-5 outline outline-gray-500 rounded-lg' onClick={() => onClickExport()}>Export</button>
                 </div>
 
+                {TableComponent(rowSelection, filteredData, columns)}
 
-                <Table
-                    rowSelection={rowSelection}
-                    className="mt-8"
-                    pagination={{ position: ['bottomCenter'] }}
-                    dataSource={filteredData}
-                    columns={columns}
-                    rowKey="id"
-                />
             </div>
 
-        </div>
+        </Container>
     )
 
 
@@ -167,5 +157,6 @@ const Overview = () => {
 }
 
 
-
 export default Overview
+
+

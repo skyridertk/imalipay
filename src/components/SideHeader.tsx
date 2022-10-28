@@ -53,7 +53,7 @@ const SideHeader = ({}: SideHeaderProps) => {
                     <button className='border text-center rounded-full py-2 text-xs' onClick={() => onNavigateClickHandler()}>Navigate to Financial</button>
                 </div>
             </div>
-            <div className="md:hidden flex items-center h-24">
+            <div className="absolute md:hidden flex items-center h-24 bg-white">
                 <button className="outline-none mobile-menu-button" onClick={() => setShowMenu(true)}>
                     <svg
                         className="w-6 h-6 text-gray-500"

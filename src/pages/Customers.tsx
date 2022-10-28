@@ -6,6 +6,9 @@ import useExport from '../hooks/useExport';
 import { CustomersItem } from '../components/CustomersItem';
 import { CustomerDetail } from '../components/CustomerDetail';
 import { RootObject } from '../models/RootObject';
+import { TableComponent } from '../components/TableComponent';
+import { Container } from '../components/Container';
+import { SearchComponent } from '../components/SearchComponent';
 
 
 const Customers = () => {
@@ -125,7 +128,7 @@ const Customers = () => {
     };
 
     return (
-        <div className='bg-gray-50 w-full min-h-screen p-10 space-y-10'>
+        <Container>
             <div className='text-2xl font-medium'>Customers</div>
 
             <div className='flex flex-col md:flex-row'>
@@ -138,30 +141,20 @@ const Customers = () => {
 
             <div className='py-20'>
                 <div className='flex items-center justify-between'>
-                    <div className='flex relative'>
-                        <input type={'text'} placeholder={"Search for customer's name"} className="bg-white outline outline-gray-500 rounded-lg pl-10 px-8 py-2 w-96" onChange={(e) => handleSearch(e.target.value)} />
-                        <div className='absolute left-2 top-2'>
-                            <Image image={"/search.svg"} />
-                        </div>
-                    </div>
+                    {SearchComponent("Search for customer's name", handleSearch)}
 
                     <button className='bg-white py-2 px-5 outline outline-gray-500 rounded-lg' onClick={()=>onClickExport()}>Export</button>
                 </div>
 
-                <Table
-                    rowSelection={rowSelection}
-                    pagination={{ position: ['bottomCenter'] }}
-                    className="mt-8"
-                    dataSource={filteredData}
-                    columns={columns}
-                    rowKey="id"
-                />
+                {TableComponent(rowSelection, filteredData, columns)}
             </div>
 
-        </div>
+        </Container>
     )
 
 }
 
 
 export default Customers
+
+

@@ -5,6 +5,9 @@ import useExport from '../hooks/useExport';
 import { RootObject } from '../models/RootObject';
 import { DefaultersItem } from '../components/DefaultersItem';
 import { CustomerDetail } from '../components/CustomerDetail';
+import { TableComponent } from '../components/TableComponent';
+import { Container } from '../components/Container';
+import { SearchComponent } from '../components/SearchComponent';
 
 
 
@@ -144,7 +147,7 @@ const Defaulters = () => {
 
 
     return (
-        <div className='bg-gray-50 w-full min-h-screen p-10 space-y-10'>
+        <Container>
 
 
             <div className='flex items-center justify-end'>
@@ -170,26 +173,14 @@ const Defaulters = () => {
 
             <div className='py-20'>
                 <div className='flex items-center justify-between'>
-                    <div className='flex relative'>
-                        <input type={'text'} placeholder={"Search for customer's name"} className="bg-white outline outline-gray-500 rounded-lg pl-10 px-8 py-2 w-96" onChange={(e) => handleSearch(e.target.value)} />
-                        <div className='absolute left-2 top-2'>
-                            <Image image={"/search.svg"} />
-                        </div>
-                    </div>
+                {SearchComponent("Search for driver's name", handleSearch)}
 
                     <button className='bg-white py-2 px-5 outline outline-gray-500 rounded-lg' onClick={() => onClickExport()}>Export</button>
                 </div>
 
-                <Table
-                    rowSelection={rowSelection}
-                    className="mt-8"
-                    pagination={{ position: ['bottomCenter'] }}
-                    dataSource={filteredData}
-                    columns={columns}
-                    rowKey="id"
-                />
+                {TableComponent(rowSelection, filteredData, columns)}
             </div>
-        </div>
+        </Container>
     )
 
 
