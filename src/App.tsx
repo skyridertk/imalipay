@@ -21,18 +21,19 @@ const App = () => {
 	return (
 		<BrowserRouter>
 			<Routes>
-				<Route path="/" element={<Main />} />
-				<Route path="/financial" element={<FinancialApp />}>
+				{/* <Route path="/" element={<Main />} /> */}
+				<Route path="/" element={<FinancialApp />}>
 					<Route index element={<Overview />} />
 					<Route path="customers" element={<Customers />} />
 					<Route path="defaults" element={<Defaulters />} />
 					<Route path="fulfilment" element={<Fulfilment />} />
+					<Route path="reconciliation" element={<OverviewReconciliation />} />
 					<Route path="customer-profile" element={<CustomerProfile />} />
                     <Route path="fulfilment-profile" element={<FulfilmentProfile />} />
 				</Route>
-				<Route path="/reconciliation" element={<ReconciliationApp />}>
+				{/* <Route path="/reconciliation" element={<ReconciliationApp />}>
 					<Route index element={<OverviewReconciliation />} />
-				</Route>
+				</Route> */}
 			</Routes>
 		</BrowserRouter>
 	)

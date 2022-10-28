@@ -11,6 +11,7 @@ import { RootObject } from '../models/RootObject';
 import { TableComponent } from '../components/TableComponent';
 import { Container } from '../components/Container';
 import { SearchComponent } from '../components/SearchComponent';
+import { ReconciliationOverviewItem } from '../components/ReconciliationOverviewItem';
 
 
 const OverviewReconciliation = () => {
@@ -171,9 +172,9 @@ const OverviewReconciliation = () => {
             </div>
 
             <div className='flex flex-col md:flex-row'>
-                {OverviewItem({ icon: '/account_1.svg', label: 'Total order transactions', value: '6,708,321' })}
+                {ReconciliationOverviewItem({ icon: '/account_1.svg', label: 'Total order transactions', value: '6,708,321' })}
 
-                {OverviewItem({ icon: '/account_2.svg', label: 'Total collections', value: '2,240,059' })}
+                {ReconciliationOverviewItem({ icon: '/account_2.svg', label: 'Total collections', value: '2,240,059' })}
 
                 {CustomOverviewItem({ icon: '/featured-transaction.svg', label: 'Reconcile', value: <div>53 <span className='text-gray-200'>/100%</span></div> })}
             </div>

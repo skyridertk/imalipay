@@ -5,7 +5,7 @@ import { MenuModal } from '../models/MenuModal';
 import { SideHeaderProps } from '../models/SideHeaderProps';
 
 
-const SideHeader = ({}: SideHeaderProps) => {
+const SideHeader = ({ }: SideHeaderProps) => {
     let navigate = useNavigate()
     let location = useLocation()
     const [showMenu, setShowMenu] = useState(false)
@@ -13,28 +13,33 @@ const SideHeader = ({}: SideHeaderProps) => {
     console.log(location.pathname)
 
     const onOverviewClickHandler = () => {
-        navigate("/financial")
+        navigate("/")
         setShowMenu(false)
     }
     const onCustomerClickHandler = () => {
-        navigate("/financial/customers")
+        navigate("/customers")
         setShowMenu(false)
     }
     const onDefaultsClickHandler = () => {
-        navigate("/financial/defaults")
+        navigate("/defaults")
         setShowMenu(false)
     }
     const onFulfilmentClickHandler = () => {
-        navigate("/financial/fulfilment")
+        navigate("/fulfilment")
         setShowMenu(false)
     }
     const onNavigateClickHandler = () => {
         navigate("/reconciliation")
         setShowMenu(false)
     }
+
+    const onReconciliationClickHandler = () => {
+        navigate("/reconciliation")
+        setShowMenu(false)
+    }
     return (
         <>
-            <div className='bg-white hidden md:flex md:flex-col  md:fixed border-2 w-full md:w-2/12 h-min md:min-h-screen pl-7 px-4 py-2 space-y-5'>
+            <div className='bg-white transition-all duration-1000 hidden md:flex md:flex-col  md:fixed border-2 w-full md:w-2/12 h-min md:min-h-screen pl-7 px-4 py-2 space-y-5'>
                 <div className='py-5' onClick={() => navigate("/")}>
                     <Image image={"/main-logo.svg"} />
                 </div>
@@ -42,18 +47,19 @@ const SideHeader = ({}: SideHeaderProps) => {
                     quick menu
                 </div>
                 <div className='space-y-5'>
-                    {MenuItem({ icon: '/overview-logo.svg', text: 'Overview', onClick: () => onOverviewClickHandler(), active: location.pathname == "/financial" })}
+                    {MenuItem({ icon: '/overview-logo.svg', text: 'Overview', onClick: () => onOverviewClickHandler(), active: location.pathname.indexOf("/") != -1 })}
                     {MenuItem({ icon: '/customers-logo.svg', text: 'Customers', onClick: () => onCustomerClickHandler(), active: location.pathname.indexOf("/customers") != -1 })}
                     {MenuItem({ icon: '/defaults-logo.svg', text: 'Defaults', onClick: () => onDefaultsClickHandler(), active: location.pathname.indexOf("/defaults") != -1 })}
                     {MenuItem({ icon: '/fulfilment-logo.svg', text: 'Fulfilment', onClick: () => onFulfilmentClickHandler(), active: location.pathname.indexOf("/fulfilment") != -1 })}
+                    {MenuItem({ icon: '/overview-logo.svg', text: 'Reconciliation', onClick: () => onReconciliationClickHandler(), active: location.pathname.indexOf("/reconciliation") != -1 })}
                 </div>
 
-                <div className='flex flex-col space-y-5 py-5'>
+                {/* <div className='flex flex-col space-y-5 py-5'>
                     <button className='border text-center rounded-full bg-gray-700 text-white py-2'>Reconciliation Dashboard</button>
                     <button className='border text-center rounded-full py-2 text-xs' onClick={() => onNavigateClickHandler()}>Navigate to Financial</button>
-                </div>
+                </div> */}
             </div>
-            <div className="absolute md:hidden flex items-center h-24 bg-white">
+            <div className="absolute transition-all duration-1000 md:hidden flex items-center h-24 bg-white">
                 <button className="outline-none mobile-menu-button" onClick={() => setShowMenu(true)}>
                     <svg
                         className="w-6 h-6 text-gray-500"

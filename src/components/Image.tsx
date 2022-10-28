@@ -1,12 +1,16 @@
 import React from 'react'
 import { ImageProp } from '../models/ImageProp';
 
-const Image = ({image}: ImageProp) => {
+const Image = (props: ImageProp) => {
   return (
     <div>
-        <img src={image} />
+        <img src={props.image} className={props?.className}/>
     </div>
   )
+}
+
+Image.defaultProps = {
+  className: "w-full h-full"
 }
 
 export default Image

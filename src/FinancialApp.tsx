@@ -12,6 +12,7 @@ import FulfilmentProfile from './pages/FulfilmentProfile';
 import TopHeader from './components/TopHeader';
 import { AppContainer } from './components/AppContainer';
 import { RoutesContainer } from './components/RoutesContainer';
+import OverviewReconciliation from './pages/OverviewReconciliation';
 
 const FinancialApp = () => {
     return (
@@ -29,6 +30,7 @@ const FinancialApp = () => {
                         <Route path="customers" element={<Customers />} />
                         <Route path="defaults" element={<Defaulters />} />
                         <Route path="fulfilment" element={<Fulfilment />} />
+                        <Route path="reconciliation" element={<OverviewReconciliation />} />
                         <Route path="customer-profile" element={<CustomerProfile />} />
                         <Route path="fulfilment-profile" element={<FulfilmentProfile />} />
                     </Routes>

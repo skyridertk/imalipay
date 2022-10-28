@@ -1,4 +1,77 @@
-<svg width="132" height="132" viewBox="0 0 132 132" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="66" cy="66" r="66" fill="#FFF0D1"/>
-<circle cx="66" cy="66" r="62.5" stroke="black" stroke-opacity="0.05" stroke-width="7"/>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="132"
+   height="133"
+   viewBox="0 0 34.925001 35.189586"
+   version="1.1"
+   id="svg895"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="eclipse.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview897"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="px"
+     showgrid="false"
+     units="px"
+     inkscape:showpageshadow="false"
+     inkscape:zoom="19.242424"
+     inkscape:cx="2.0007874"
+     inkscape:cy="19.332283"
+     inkscape:window-width="1482"
+     inkscape:window-height="1020"
+     inkscape:window-x="243"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs892" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g986"
+       transform="translate(440.73244,355.33048)">
+      <g
+         style="fill:none"
+         id="g979"
+         transform="matrix(0.26458333,0,0,0.26458333,-440.73244,-355.19816)">
+        <circle
+           cx="66"
+           cy="66"
+           r="66"
+           fill="#fff0d1"
+           id="circle967" />
+        <circle
+           cx="66"
+           cy="66"
+           r="62.5"
+           stroke="#000000"
+           stroke-opacity="0.05"
+           stroke-width="7"
+           id="circle969" />
+      </g>
+      <g
+         style="fill:none"
+         id="g965"
+         transform="matrix(0.26458333,0,0,0.26458333,-440.73244,-355.33048)">
+        <path
+           d="M 74.8621,4.05743 C 65.1227,2.75315 55.2132,3.74519 45.9256,6.95428 36.6379,10.1634 28.2298,15.5005 21.373,22.5392 14.5162,29.5778 9.401,38.1229 6.43613,47.4913 3.47125,56.8597 2.73894,66.7918 4.29772,76.4938 c 1.55877,9.702 5.36542,18.9048 11.11568,26.8732 5.7503,7.968 13.2848,14.481 22.0013,19.017 8.7165,4.537 18.3734,6.971 28.1988,7.11 9.8254,0.138 19.547,-2.024 28.3877,-6.313"
+           stroke="#feaa00"
+           stroke-width="7"
+           id="path956" />
+      </g>
+    </g>
+  </g>
 </svg>

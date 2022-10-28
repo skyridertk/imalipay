@@ -90,7 +90,7 @@ const Customers = () => {
     ];
 
     const onClickViewHandler = (record) => {
-        navigate("/financial/customer-profile")
+        navigate("/customer-profile")
     }
 
     const [selectedRowKeys, setSelectedRowKeys] = useState([]);
